@@ -1,0 +1,17 @@
+{
+    "san francisco ultralight": {
+        "normal": "san_francisco_ultralight_normal_a1178d96cd6f258babe941768dfbe5fd"
+    },
+    "san francisco thin": {
+        "normal": "san_francisco_thin_normal_2eb60bcbddfafe5f5a1b0feadd5c34c4"
+    },
+    "san francisco medium": {
+        "normal": "san_francisco_medium_normal_6b205c7f3c6119e41d1f8d9170a19ece"
+    },
+    "san francisco semibold": {
+        "normal": "san_francisco_semibold_normal_bec6b7f3ce51388099216768f8aad4fb"
+    },
+    "san francisco bold": {
+        "normal": "san_francisco_bold_normal_729666fb6573c87ff42048a64a22d5db"
+    }
+}
