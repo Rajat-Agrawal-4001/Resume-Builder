@@ -1,21 +1,12 @@
 <?php
 session_start();
 
-$conn = mysqli_connect('localhost', 'root', '', 'idealvillage');
-if (!$conn) {
-  echo "Connection Error.";
-  die;
-}
-
 function realEscape($val)
 {
-  global $conn;
-  return mysqli_escape_string($conn, $val);
-}
-function encoder($str)
-{
-  $str = str_replace("'", "'+" . '"' . "'" . '"' . "+'", $str);
-  return $str;
+  $search = array("\\",  "\x00", "\r",  "'",  '"', "\x1a");
+  $replace = array("\\\\", "\\0", "\\r", "\'", '\"', "\\Z");
+
+  return str_replace($search, $replace, $val);
 }
 
 function decoder($str)

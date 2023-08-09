@@ -6,22 +6,14 @@ session_start();
 require_once 'dompdf/autoload.inc.php';
 $dompdf = new Dompdf();
 
-$conn = mysqli_connect('localhost', 'root', '', 'idealvillage');
-if (!$conn) {
-    echo "Connection Error.";
-    die;
-}
-
 $create_flag = -1;
+
 function realEscape($val)
 {
-    global $conn;
-    return mysqli_escape_string($conn, $val);
-}
-function encoder($str)
-{
-    $str = str_replace("'", "'+" . '"' . "'" . '"' . "+'", $str);
-    return $str;
+    $search = array("\\",  "\x00", "\r",  "'",  '"', "\x1a");
+    $replace = array("\\\\", "\\0", "\\r", "\'", '\"', "\\Z");
+
+    return str_replace($search, $replace, $val);
 }
 
 function decoder($str)
