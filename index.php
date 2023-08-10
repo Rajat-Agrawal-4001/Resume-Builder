@@ -15,7 +15,7 @@ function realEscape($val)
 
     return str_replace($search, $replace, $val);
 }
-
+// main
 function decoder($str)
 {
     $str = str_replace("'+" . '"' . "'" . '"' . "+'", "'", $str);
